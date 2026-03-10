@@ -1,0 +1,434 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #b8956a;
+  --gold-dark: #96724d;
+  --gold-light: #d4b896;
+  --cream: #faf6f0;
+  --cream-dark: #f0e8dc;
+  --brown: #6b4f35;
+  --brown-dark: #4a3525;
+  --text: #5a4230;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Assistant', 'Segoe UI', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+  direction: rtl;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Hero ─── */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(212, 184, 150, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(184, 149, 106, 0.15) 0%, transparent 50%),
+    linear-gradient(175deg, #fdf9f3 0%, #f5ede2 40%, #efe5d6 100%);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 80%;
+  height: 150%;
+  background: radial-gradient(ellipse, rgba(212, 184, 150, 0.12) 0%, transparent 70%);
+  animation: shimmer 8s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(5%, 3%) rotate(2deg); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 60px 24px;
+}
+
+.logo {
+  margin-bottom: 40px;
+}
+
+.lotus {
+  width: 100px;
+  height: 70px;
+  margin-bottom: 8px;
+}
+
+.brand-name {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--brown-dark);
+  letter-spacing: 2px;
+  direction: ltr;
+}
+
+.brand-name em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 4px;
+  direction: ltr;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--gold-dark);
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.hero-questions h2 {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  font-weight: 700;
+  color: var(--brown);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.hero-questions h2:nth-child(1) { font-size: 2rem; }
+.hero-questions h2:nth-child(2) { font-size: 2rem; }
+.hero-questions h2:nth-child(3) { font-size: 2.2rem; }
+
+.hero-questions .highlight {
+  color: var(--gold-dark);
+}
+
+/* ─── About ─── */
+
+.about {
+  background: var(--white);
+  padding: 48px 0;
+  text-align: center;
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.about-lead {
+  font-size: 1.2rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.about-location {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 300;
+}
+
+.pin {
+  font-size: 1.1rem;
+}
+
+/* ─── Treatments ─── */
+
+.treatments {
+  padding: 64px 0;
+  background: var(--cream);
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--brown);
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: var(--gold-light);
+  margin: 12px auto 0;
+}
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.treatment-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px 16px;
+  box-shadow: 0 2px 12px rgba(107, 79, 53, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treatment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(107, 79, 53, 0.1);
+}
+
+.treatment-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.treatment-card span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--brown);
+}
+
+.treatments-more {
+  margin-top: 20px;
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ─── Services ─── */
+
+.services {
+  padding: 64px 0;
+  background: var(--white);
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--cream);
+  border-radius: 16px;
+  padding: 32px 20px;
+  border: 1px solid var(--cream-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(107, 79, 53, 0.08);
+}
+
+.service-icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.service-card h4 {
+  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* ─── CTA ─── */
+
+.cta {
+  padding: 72px 0;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, rgba(212, 184, 150, 0.15) 0%, transparent 70%),
+    var(--cream);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold-light);
+}
+
+.cta-title {
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--gold-dark);
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 16px 48px;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  direction: rtl;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(150, 114, 77, 0.25);
+}
+
+.cta-button:hover {
+  background: var(--brown);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(150, 114, 77, 0.35);
+}
+
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #25d366;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  opacity: 0.8;
+}
+
+.whatsapp-link svg {
+  fill: #25d366;
+}
+
+/* ─── Footer ─── */
+
+.footer {
+  background: var(--brown-dark);
+  padding: 32px 0;
+  text-align: center;
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold-light);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  direction: ltr;
+}
+
+.instagram-link:hover {
+  color: var(--white);
+}
+
+.instagram-link svg {
+  fill: currentColor;
+}
+
+.footer-copy {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: rgba(212, 184, 150, 0.5);
+  direction: ltr;
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 2.2rem;
+  }
+
+  .hero-questions h2:nth-child(1),
+  .hero-questions h2:nth-child(2) {
+    font-size: 1.5rem;
+  }
+
+  .hero-questions h2:nth-child(3) {
+    font-size: 1.7rem;
+  }
+
+  .treatment-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cta-button {
+    font-size: 1.1rem;
+    padding: 14px 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 40px 16px;
+  }
+
+  .brand-name {
+    font-size: 1.8rem;
+  }
+
+  .hero-questions h2:nth-child(1),
+  .hero-questions h2:nth-child(2) {
+    font-size: 1.3rem;
+  }
+
+  .hero-questions h2:nth-child(3) {
+    font-size: 1.4rem;
+  }
+
+  .treatment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+}
