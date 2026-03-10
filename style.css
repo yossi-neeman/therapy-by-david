@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  font-family: 'Assistant', 'Segoe UI', sans-serif;
+  font-family: 'Frank Ruhl Libre', 'Assistant', 'Segoe UI', serif;
   background: var(--cream);
   color: var(--text);
   line-height: 1.7;
@@ -534,7 +534,7 @@ body {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  font-family: 'Assistant', sans-serif;
+  font-family: inherit;
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--brown);
